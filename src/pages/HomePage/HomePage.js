@@ -88,6 +88,7 @@ const MainArea = styled.main`
   overflow: hidden;
 
   @media(max-width: 700px) {
+    min-height: 100vh;
     height: 100%;
     overflow: visible;
   }

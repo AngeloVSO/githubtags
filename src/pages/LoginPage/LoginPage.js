@@ -28,22 +28,28 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
 
-  const signUp = () => {
+  const localEmail = window.localStorage.getItem("email");
+  const localpassword = window.localStorage.getItem("password");
+
+  const signUp = (e) => {
+    e.preventDefault()
+
+    if (email === localEmail) {
+      alert("E-mail já cadastrado. Utilize outro.")
+    } 
+
     window.localStorage.setItem("email", email);
     window.localStorage.setItem("user", user);
     window.localStorage.setItem("password", password);
     window.localStorage.setItem("token", String(Date.now()));
     alert("Cadastro realizado com sucesso!");
-    goToLogin(history);
+    goToHome(history);
   };
-
-  const localEmail = window.localStorage.getItem("email");
-  const localpassword = window.localStorage.getItem("password");
 
   const login = (e) => {
     e.preventDefault();
 
-    if (!localEmail) {
+    if (!localEmail || email !== localEmail) {
       alert('E-mail não cadastrado. Realize seu cadastro para fazer login.')
       return
     }
@@ -64,12 +70,14 @@ const LoginPage = () => {
           <input
             required
             type="email"
+            value={email}
             onChange={handleEmail}
             placeholder="informe seu email"
           />
           <input
             required
             type="text"
+            value={user}
             onChange={handleUser}
             placeholder="como gostaria de ser chamado?"
           />

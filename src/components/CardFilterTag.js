@@ -35,7 +35,7 @@ const Form = styled.form`
 
   input {
     height: 70%;
-    width: 50%;
+    width: 58%;
     padding: 8px;
   }
 `;

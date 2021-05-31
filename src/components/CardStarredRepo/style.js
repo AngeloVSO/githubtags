@@ -5,12 +5,17 @@ export const Div = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
   grid-template-rows: 60px 220px;
   gap: 8px;
-  padding: 0 8px;
+  padding: 0 8px 8px;
   width: 100%;
   margin-left: 24px;
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.42);
   overflow-y: auto;
+  transition: .2s;
+
+  @media(max-width: 700px) {
+    margin: 12px 0;
+  }
 `;
 
 export const AddTagForm = styled.div`

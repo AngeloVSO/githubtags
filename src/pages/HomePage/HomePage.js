@@ -87,6 +87,11 @@ const MainArea = styled.main`
   background-color: #e6e6e6;
   overflow: hidden;
 
+  @media(max-width: 700px) {
+    height: 100%;
+    overflow: visible;
+  }
+
   h1 {
     position: absolute;
     top: 50%;
@@ -99,4 +104,10 @@ const CardsArea = styled.section`
   display: flex;
   height: 100%;
   padding: 24px 0 24px 24px;
+  transition: .2s;
+
+  @media(max-width: 700px) {
+    flex-direction: column;
+    padding: 24px;
+  }
 `;

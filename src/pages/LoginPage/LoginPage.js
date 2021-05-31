@@ -43,11 +43,16 @@ const LoginPage = () => {
   const login = (e) => {
     e.preventDefault();
 
+    if (!localEmail) {
+      alert('E-mail não cadastrado. Realize seu cadastro para fazer login.')
+      return
+    }
+
     if (email === localEmail && password === localpassword) {
       window.localStorage.setItem("token", String(Date.now()));
       goToHome(history);
     } else {
-      alert("email/senha incorretos");
+      alert("E-mail/senha incorretos");
     }
   };
 

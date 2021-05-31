@@ -48,10 +48,27 @@ const Header = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  transition: .2s;
+  z-index: 999;
+
+  @media(max-width: 840px) {
+      padding: 16px;
+    }
 
   h1 {
     color: #fff;
     font-weight: 400;
+    transition: .2s;
+
+    @media(max-width: 840px) {
+      font-size: 26px;
+    }
+
+    @media(max-width: 580px) {
+      font-size: 14px;
+    }
   }
 `;
 const Logo = styled.div`
@@ -62,11 +79,23 @@ const Logo = styled.div`
     width: 40px;
     filter: invert();
     margin-right: 16px;
+    transition: .2s;
+
+    @media(max-width: 580px) {
+      width: 28px;
+      margin-right: 8px;
+    }
   }
 `;
 
 const Form = styled.form`
   width: 25%;
+  transition: .2s;
+
+  @media(max-width: 840px) {
+      width: 40%;
+      margin: 0 8px;
+    }
 
   input {
     height: 36px;
@@ -82,6 +111,11 @@ const UserArea = styled.div`
 
   h1 {
     margin-right: 16px;
+    transition: .2s;
+
+    @media(max-width: 580px) {
+      margin-right: 8px;
+    }
   }
 
   button {
@@ -93,6 +127,12 @@ const UserArea = styled.div`
     img {
       width: 40px;
       filter: invert();
+      transition: .2s;
+
+      @media(max-width: 580px) {
+        width: 28px;
+        margin-right: 8px;
+      }
     }
   }
 `;

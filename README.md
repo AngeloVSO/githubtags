@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# GitHub TAGS - Processo seletivo incentive.me
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projeto desenvolvido como parte do processo seletivo para incentive.me
+O projeto consiste em poder consultar um usuário utilizando API do github, verificando seus repositórios com estrelas, permitindo adicionar uma tag ao repositório para que você possa encontra-lo mais facilmente consultando uma tag cadastrada. 
 
-## Available Scripts
+Trata-se de uma SPA onde funciona apenas localmente, sem persistência de dados.
 
-In the project directory, you can run:
+O projeto permite:
+- Fazer autenticação e autorização de usuário;
+- Buscar todos os repositórios em que o usuário fornecido adicionou estrela;
+- Gerenciar tags de repositórios listados (adicionar e excluir);
+- Filtrar repositórios por tags.
 
-### `npm start`
+### Como rodar?
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Faça um clone, acesse  terminal e dê um npm install.
+Dê um comando npm start. Irá rodar em modo de desenvolvedor.
+Em [http://localhost:3000](http://localhost:3000).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Deploy
 
-### `npm test`
+Link pra acessar aplicação: https://aodev-githubstags.netlify.app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### O que funciona:
 
-### `npm run build`
+- É possível criar cadastro 
+- É possível efetuar login 
+- Acesso a aplicação apenas com login
+- É possível buscar um usuário via API github
+- É possível visualizar repositórios com estrelas
+- É possível adicionar tags aos repositórios com estrelas
+- Não é possível adicionar tags iguais ao mesmo repositório
+- É possível remover tags dos repositórios com estrelas
+- É possível consultar repositórios informando uma tag cadastrada
+- Responsividade para iphone 6/7/8 Plus
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### O que não funciona:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Não é possível manter as tags salvas casa atualize ou saia da aplicação
+- Não é possível editar as tags
+- Não é possível armazenar mais de um usuário cadastrado. Devido a falta de persistência de dados, caso seja cadastrado um segundo usuário, o primeiro será excluído.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tecnologias utilizadas
 
-### `npm run eject`
+A fim de praticar meus conhecimentos, escolhi desenvolver o projeto em React.JS - uma das libs mais utilizadas no mercado atualmente.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+React JS - Biblioteca JavaScript para criar interfaces de usuário.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Styled-Components - CSS escrito diretamente no código para estilização de componentes do React JS.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Autor
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/AngeloVSO">
+    <img src="https://avatars.githubusercontent.com/u/70985334?v=4" width="100px" alt="Imagem do perfil do
+    Angelo O'Dwyer"/>
+    <br />
+    <sub><b>Angelo O'Dwyer</b></sub><br /></td>
+</table>

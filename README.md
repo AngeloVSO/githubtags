@@ -1,4 +1,4 @@
-# GitHub TAGS - Processo seletivo incentive.me
+# GitHub TAGS
 
 Projeto desenvolvido como parte do processo seletivo para incentive.me
 O projeto consiste em poder consultar um usuário utilizando API do github, verificando seus repositórios com estrelas, permitindo adicionar uma tag ao repositório para que você possa encontra-lo mais facilmente consultando uma tag cadastrada. 

@@ -1,7 +1,7 @@
 export const goToLogin = (history) => {
-    history.push("/login");
+    history.push("/");
   };
 
-export const goToHome = (history) => {
-    history.push("/");
+export const goToHome = (history, user) => {
+    history.push(`/${user}`);
   };

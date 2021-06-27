@@ -1,22 +1,31 @@
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import styled from "styled-components";
+import CardPublicRepos from "../../components/CardPublicRepo/CardPublicRepo";
 import CardStarredRepo from "../../components/CardStarredRepo/CardStarredRepo";
-import CardUser from "../../components/CardUser";
-import HeaderPage from "../../components/Header";
-import { useHistory } from "react-router-dom";
+import CardUser from "../../components/CardUser/CardUser";
+import HeaderPage from "../../components/Header/Header";
+import { useHistory, useParams } from "react-router-dom";
 import { goToLogin } from "../../router/coordinator";
+import { getStarredRepos, getPublicRepos } from "../../services/api";
+import { MainArea, CardsArea } from "./style";
 
 const HomePage = () => {
   const [data, setData] = useState("");
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState(
+    window.localStorage.getItem("user")
+  );
   const [notFound, setNotFound] = useState(null);
   const [starredData, setStarredData] = useState([]);
+  const [publibReposData, setPublicReposData] = useState([])
+  const [toggleRepos, setToggleRepos] = useState(true);
   const history = useHistory();
+  const params = useParams();
 
-   useLayoutEffect(() => {
+  useLayoutEffect(() => {
     if (!window.localStorage.getItem("token")) {
       goToLogin(history);
     }
+
+    getUserProfile(params.user);
   }, []);
 
   useEffect(() => {
@@ -31,9 +40,12 @@ const HomePage = () => {
     setUserInput(e.target.value);
   };
 
-  const handleUserSubmit = (e) => {
-    e.preventDefault();
-    fetch(`https://api.github.com/users/${userInput}`)
+  const getUserProfile = (user) => {
+    fetch(`https://api.github.com/users/${user}`, {
+      headers: {
+        Authorization: `token ${window.localStorage.getItem('token')}`
+      }
+    })
       .then((res) => res.json())
       .then((data) => {
         if (data.message) {
@@ -41,38 +53,39 @@ const HomePage = () => {
         } else {
           setData(data);
           setNotFound(null);
-          getStarredRepo();
+          getPublicRepos(user, setPublicReposData);
+          getStarredRepos(user, setStarredData);
         }
       });
-    
-  };
-
-  const getStarredRepo = () => {
-    fetch(`https://api.github.com/users/${userInput}/starred`)
-      .then((res) => res.json())
-      .then((data) => setStarredData(data));
   };
 
   return (
     <>
-      <HeaderPage handleUserSubmit={handleUserSubmit} handleUserInput={handleUserInput} />
+      <HeaderPage
+        handleUserSubmit={getUserProfile}
+        handleUserInput={handleUserInput}
+        userInput={userInput}
+      />
       <MainArea>
         {notFound ? (
           <h1>{notFound}</h1>
         ) : (
           <CardsArea>
-            {data &&
-            <>
-            <CardUser
-              avatar={data.avatar_url}
-              name={data.name}
-              repos={data.public_repos}
-              username={data.login}
-              starredTotal={starredData.length}
-            />
-
-            <CardStarredRepo starredRepo={starredData} />
-            </>}
+            {data && (
+              <>
+                <CardUser
+                  avatar={data.avatar_url}
+                  name={data.name}
+                  repos={data.public_repos}
+                  username={data.login}
+                  starredTotal={starredData.length}
+                  toggleRepos={setToggleRepos}
+                />
+                {toggleRepos ? <CardPublicRepos publicRepos={publibReposData}/> :           
+                  <CardStarredRepo starredRepo={starredData} />
+                }
+              </>
+            )}
           </CardsArea>
         )}
       </MainArea>
@@ -81,34 +94,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-const MainArea = styled.main`
-  height: calc(100vh - 80px);
-  background-color: #e6e6e6;
-  overflow: hidden;
-
-  @media(max-width: 700px) {
-    min-height: 100vh;
-    height: 100%;
-    overflow: visible;
-  }
-
-  h1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%);
-  }
-`;
-
-const CardsArea = styled.section`
-  display: flex;
-  height: 100%;
-  padding: 24px 0 24px 24px;
-  transition: .2s;
-
-  @media(max-width: 700px) {
-    flex-direction: column;
-    padding: 24px;
-  }
-`;

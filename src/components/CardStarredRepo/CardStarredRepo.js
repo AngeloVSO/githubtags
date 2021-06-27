@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import CardFilterTag from "../CardFilterTag";
+import CardFilterTag from "../CardFilterTag/CardFilterTag";
+import Star from "../../images/star.svg";
 import { Div, AddTagForm, AddTagButton, CardRepo, Tags } from "./style";
 
 const CardStarredRepo = ({ starredRepo }) => {
@@ -83,6 +84,7 @@ const CardStarredRepo = ({ starredRepo }) => {
             <CardFilterTag setInputSearch={setInputSearch} />
             {starredFiltred.map((data) => (
               <CardRepo key={data.id}>
+                <img src={Star} alt="Star" />
                 <div>
                   <p>
                     <strong>id:</strong> {data.id}

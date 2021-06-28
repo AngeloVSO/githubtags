@@ -1,5 +1,5 @@
 import React from "react";
-import LogoGit from "../../images/logogithub.svg";
+import LogoGitTags from "../../images/gittags.svg";
 import Exit from "../../images/exit.svg";
 import { useHistory } from "react-router-dom";
 import { goToHome, goToLogin } from "../../router/coordinator";
@@ -19,8 +19,7 @@ const HeaderPage = ({ handleUserInput, userInput }) => {
   return (
     <Header>
       <Logo>
-        <img src={LogoGit} alt="Logo GitHub" />
-        <h1>GitHub TAGS</h1>
+        <img src={LogoGitTags} alt="Logo GitHub TAGS" />
       </Logo>
 
       <Form onSubmit={() => goToHome(history, userInput)}>

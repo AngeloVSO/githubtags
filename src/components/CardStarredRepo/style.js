@@ -8,6 +8,7 @@ export const Div = styled.section`
   padding: 0 8px 8px;
   width: 100%;
   margin-left: 24px;
+  border-radius: 20px 0 0 20px;
   background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.42);
   overflow-y: auto;
@@ -15,6 +16,7 @@ export const Div = styled.section`
 
   @media(max-width: 700px) {
     margin: 12px 0;
+    border-radius: 20px;
   }
 `;
 

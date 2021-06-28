@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Div = styled.div`
 padding: 20px;
 height: 100%;
+border-radius: 20px;
 min-width: 300px;
 display: grid;
 grid-template-columns: 1fr;

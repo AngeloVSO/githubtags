@@ -13,7 +13,7 @@ transition: .2s;
 z-index: 999;
 
 @media(max-width: 840px) {
-    padding: 16px;
+    padding: 8px;
   }
 
 h1 {
@@ -35,13 +35,12 @@ display: flex;
 align-items: center;
 
 img {
-  width: 40px;
-  filter: invert();
+  width: 120px;
   margin-right: 16px;
   transition: .2s;
 
   @media(max-width: 580px) {
-    width: 28px;
+    width: 80px;
     margin-right: 8px;
   }
 }
@@ -61,6 +60,10 @@ input {
   padding: 0 8px;
   width: 100%;
   outline: none;
+  
+  @media(max-width: 580px) {
+    padding: 0;
+  }
 }
 `;
 
@@ -89,8 +92,7 @@ button {
     transition: .2s;
 
     @media(max-width: 580px) {
-      width: 28px;
-      margin-right: 8px;
+      width: 24px;
     }
   }
 }

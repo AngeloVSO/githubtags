@@ -1,6 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { useHistory } from "react-router-dom";
-import Logo from "../../images/logogithub.svg";
+import GitHub from "../../images/logogithub.svg";
+import LogoGithubTags from "../../images/gittags_black.svg";
 import { MainArea, LoginForm } from "./style";
 import githubProvider from "../../config/authMethod";
 import { goToHome } from "../../router/coordinator";
@@ -27,11 +28,12 @@ const LoginPage = () => {
 
   return (
     <MainArea>
-        <img src={Logo} alt="User" />
+        <img src={GitHub} alt="User" />
         <LoginForm>
           <div>
-            <h1>Você está no GitHub TAGS</h1>
-            <p>O lugar perfeito para organizar seus repositórios favoritos.</p>
+            {/* <h1>Você está no</h1>  */}
+            <img src={LogoGithubTags} alt="User" />
+            <p>Seu gerenciador de repositórios!</p>
           </div>
           
           <p>Para ajudar na sua organização e consulta, aqui no GitHub TAGS você poderá criar tags para seus repositórios preferidos, filtra-las de acordo com as tags cadastradas, removê-las caso queira mudar de tag e até adicionar mais de uma tag. Ah! Não se precocupe que não deixaremos você cadastrar tags repetidas, pode confiar! :)</p>

@@ -7,6 +7,7 @@ grid-template-rows: 160px;
 gap: 8px;
 padding: 8px;
 width: 100%;
+border-radius: 20px 0 0 20px;
 margin-left: 24px;
 background-color: rgba(255, 255, 255, 0.7);
 box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.42);
@@ -15,6 +16,7 @@ transition: .2s;
 
 @media(max-width: 700px) {
   margin: 12px 0;
+  border-radius: 20px;
 }
 `;
 

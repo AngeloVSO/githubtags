@@ -14,5 +14,7 @@ input {
   height: 70%;
   width: 58%;
   padding: 8px;
+  border-radius: 8px;
+  border: 1px solid lightgrey;
 }
 `;

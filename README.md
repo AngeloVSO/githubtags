@@ -3,7 +3,13 @@
 Projeto desenvolvido como parte do processo seletivo para compassoUOL.
 O projeto consiste em poder logar na aplicação com autenticação do github, consultar um usuário utilizando API do github, verificando repositórios públicos e com estrelas. Implementei a funcionalidade de adicionar uma tag ao repositório para que você possa encontra-lo mais facilmente consultando uma tag cadastrada. 
 
-O projeto permite:
+<img src="https://user-images.githubusercontent.com/70985334/127355202-da3f4a69-dacd-4a7f-b065-69c2e5d14cf0.png" width="600px" alt="home"/></br></br>
+<img src="https://user-images.githubusercontent.com/70985334/127354982-5b96d577-6dbf-4433-a0cb-a8052e5d9d7b.png" width="600px" alt="home"/></br></br>
+<img src="https://user-images.githubusercontent.com/70985334/127355002-99d2cb3f-8790-4431-b49d-254c76172489.png" width="600px" alt="home"/></br></br>
+<img src="https://user-images.githubusercontent.com/70985334/127355022-bca8535b-ea83-446d-b6a5-c209162c47d3.png" width="600px" alt="home"/></br></br>
+<img src="https://user-images.githubusercontent.com/70985334/127355122-a2f45a17-3dc5-4e7d-bf60-7cedddc03b03.png" width="600px" alt="home"/></br></br>
+
+### O projeto permite:
 - Fazer autenticação e autorização de usuário github;
 - Buscar todos os repositórios do usário logado;
 - Buscar outros usários válidos no github;
